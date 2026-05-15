@@ -1,7 +1,22 @@
- from flask import Flask
+from telegram.ext import Application, CommandHandler
+import requests
 
-app = Flask(__name__)
+TOKEN = "/gold"
 
-@app.route("/")
-def home():
-    return "Hello Render!"
+async def start(update, context):
+    await update.message.reply_text("ربات فارکس طلا فعال شد ✅")
+
+async def gold(update, context):
+    url = "https://api.gold-api.com/price/XAU"
+    data = requests.get(url).json()
+
+    price = data["price"]
+
+    await update.message.reply_text(f"قیمت طلا: {price}$")
+
+app = Application.builder().token(TOKEN).build()
+
+app.add_handler(CommandHandler("start", start))
+app.add_handler(CommandHandler("gold", gold))
+
+app.run_polling()
