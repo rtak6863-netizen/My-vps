@@ -1,7 +1,7 @@
 from telegram.ext import Application, CommandHandler
 import requests
 
-TOKEN = "8870873326:AAHwOosZfhlY6HHxL2IBdfJrythNPKpWCDA"
+TOKEN = "8772201536:AAGsVb-yS7MPK2gpgN51gVgk_U7enkCodYw"
 
 async def start(update, context):
     await update.message.reply_text("ربات فارکس طلا فعال شد ✅")
