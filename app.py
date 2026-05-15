@@ -4,12 +4,11 @@ import requests
 TOKEN = "8772201536:AAGsVb-yS7MPK2gpgN51gVgk_U7enkCodYw"
 
 async def start(update, context):
-    await update.message.reply_text("ربات فارکس طلا فعال شد ✅")
+    await update.message.reply_text("ربات سیگنال طلا فعال شد ✅")
 
 async def gold(update, context):
     url = "https://api.gold-api.com/price/XAU"
     data = requests.get(url).json()
-
     price = data["price"]
 
     await update.message.reply_text(f"قیمت طلا: {price}$")
