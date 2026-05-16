@@ -1,7 +1,7 @@
 from telegram.ext import Application, CommandHandler
 import requests
 
-TOKEN = "8772201536:AAGsVb-yS7MPK2gpgN51gVgk_U7enkCodYw"
+TOKEN = "8772201536:AAG6TpU04rkcKjnV_dQcpkrqfmUtK42cYpg"
 
 async def start(update, context):
     await update.message.reply_text("ربات سیگنال طلا فعال شد ✅")
